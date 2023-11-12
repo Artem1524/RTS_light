@@ -9,8 +9,8 @@ public class CameraController : MonoBehaviour
     private const string ATTACK_TEXTURE_NAME = "Attack";
     private const string ARMOR_TEXTURE_NAME = "Armor";
 
-    private const string ATTACK_PARAM_TITLE = "Атака:";
-    private const string ARMOR_PARAM_TITLE = "Защита:";
+    private const string ATTACK_PARAM_TITLE = "РђС‚Р°РєР°:";
+    private const string ARMOR_PARAM_TITLE = "Р—Р°С‰РёС‚Р°:";
 
     [SerializeField]
     private Camera _mainCamera;
@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
 
     private void OnLeftClick(CallbackContext context)
     {
-        Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition); // Переписать на new InputSystem
+        Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ new InputSystem
 
         if (!Physics.Raycast(ray, out RaycastHit raycastHit))
         {
@@ -58,6 +58,7 @@ public class CameraController : MonoBehaviour
             ResetUnitSelection();
 
             Unit unit = collider.transform.parent.GetComponent<Unit>();
+            _selectedUnit = unit;
             UpdateUIUnitInfo(unit);
             SubscribeUnitHealthChanged(unit);
             MakeUnitSelection(unit.SelectionCirclePoint);
@@ -78,7 +79,7 @@ public class CameraController : MonoBehaviour
     {
         List<UIUnitInfoData> unitParamsData = new List<UIUnitInfoData>();
 
-        if (UIUnitInfoPanel.UnitParamElementsCount < 2) // Сделать более точную проверку
+        if (UIUnitInfoPanel.UnitParamElementsCount < 2) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             return unitParamsData.ToArray();
 
         if (unit.UnitParams.UnitBattleParams.Attack > 0)
@@ -86,7 +87,7 @@ public class CameraController : MonoBehaviour
             unitParamsData.Add(MakeUnitInfoData(ATTACK_TEXTURE_NAME, ATTACK_PARAM_TITLE, unit.UnitParams.UnitBattleParams.Attack.ToString()));
         }
 
-        // unitParamsData.Add(MakeUnitInfoData(ARMOR_TEXTURE_NAME, ARMOR_PARAM_TITLE, unit.UnitParams.UnitBaseParams.Armor.ToString())); Менять textureName
+        // unitParamsData.Add(MakeUnitInfoData(ARMOR_TEXTURE_NAME, ARMOR_PARAM_TITLE, unit.UnitParams.UnitBaseParams.Armor.ToString())); пїЅпїЅпїЅпїЅпїЅпїЅ textureName
 
         return unitParamsData.ToArray();
     }
@@ -120,7 +121,7 @@ public class CameraController : MonoBehaviour
 
     private void ResetSelectedUnitSubscriptions()
     {
-        if (_selectedUnit != null)
+        if (_selectedUnit != null) // _selectedUnit == null
         {
             UnsubscribeUnitHealthChanged(_selectedUnit);
             _selectedUnit = null;

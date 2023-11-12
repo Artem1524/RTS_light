@@ -20,6 +20,6 @@ MonoBehaviour:
       Armor: 0
     UnitBattleParams:
       Attack: 70
-      AttackRate: 0.5
+      AttackRate: 0.55
       AttackRange: 2
     MoveSpeed: 3

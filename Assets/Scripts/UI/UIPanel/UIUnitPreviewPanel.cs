@@ -37,20 +37,20 @@ public class UIUnitPreviewPanel : MonoBehaviour
 
     private void ResetUnitHealth()
     {
-        //_uiUnitHealth.SetText("");
-        //_uiUnitHealth.gameObject.SetActive(false);
+        _uiUnitHealth.gameObject.SetActive(false);
+        _uiUnitHealth.SetText("");
     }
 
     private void UpdateUnitPreviewModel(UnitType unitType)
     {
-        // Менять Preview модель
+        // пїЅпїЅпїЅпїЅпїЅпїЅ Preview пїЅпїЅпїЅпїЅпїЅпїЅ
         _unitPreview.gameObject.SetActive(true);
     }
 
     private void ResetUnitPreviewModel()
     {
-        // Убирать Preview модель
         _unitPreview.gameObject.SetActive(false);
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ Preview пїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     private string MakeHealthText(Health unitHealth)
