@@ -1,0 +1,34 @@
+{
+    "name": "CameraControls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "2a90a882-7ae1-44a2-96f9-964955902613",
+            "actions": [
+                {
+                    "name": "LeftClick",
+                    "type": "Button",
+                    "id": "e4ccf26b-591c-44e9-b3eb-7b7ccf50c261",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5f1fc304-b528-488a-bad2-1d913cdeee08",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
