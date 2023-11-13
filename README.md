@@ -6,4 +6,4 @@
 
 ## Скриншоты
 
-<img src="https://github.com/Artem1524/Top_down_shooter/blob/master/RTS_light.gif"/>
+<img src="https://github.com/Artem1524/RTS_light/blob/master/RTS_light.gif"/>
